@@ -59,6 +59,11 @@ void loop() {
     digitalWrite(pinMotor, LOW);
     Serial.println("Estado: APAGADO");
   }
+  if (temperatura > 100 || temperatura < 0){
+    Serial.println("Error de lectura");
+    Serial.println("Revisa el sensor");
+  }//se agrega un if para atrapar lecturas erroneas 
+   //Se manda un aviso 
 
   // El DHT11 requiere de 1 a 2 segundos entre lecturas para no saturarse
   delay(1500); 
